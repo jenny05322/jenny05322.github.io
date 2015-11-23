@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laravel Queues</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../reveal/css/reveal.css">
+	<link rel="stylesheet" href="../reveal/css/theme/night.css" id="theme">
+	<link rel="stylesheet" href="../reveal/lib/css/monokai_sublime.css">
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Laravel Queues</h1>
+				<p>
+					Jenny 2015/11/23
+				</p>
+			</section>
+			<section>
+				<h2>小觀念</h2>
+				<ul>
+					<li>
+						程式放哪兒？
+						<ul>
+							<li>app/Jobs</li>
+						</ul>
+					</li>
+					<li>Jobs V.S. Queues</li>
+					<li>最常聽到要使用的地方？</li>
+					<li>可以大幅加速網站速度</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+					<h2>queue drivers</h2>
+					<ul>
+						<li>null：不使用 queued jobs</li>
+						<li>sync：系統預設，會立即執行</li>
+						<li>database：我們要用的</li>
+						<li>beanstalkd</li>
+						<li>sqs</li>
+						<li>iron</li>
+						<li>redis</li>
+					</ul>
+				</section>
+				<section>
+					<h2>設定</h2>
+					<p>config\queue.php</p>
+					<pre class="php" data-trim><code>
+'default' => env('QUEUE_DRIVER', 'database'),
+					</code></pre>
+					<p>.env</p>
+					<pre class="php" data-trim><code>
+QUEUE_DRIVER=database
+					</code></pre>
+				</section>
+				<section>
+					<h2>建立資料庫</h2>
+					<pre><code data-trim>
+php artisan queue:table
+php artisan migrate
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>撰寫 Job Class</h2>
+					<p>我們來寫一個假裝在寄信的 mail job</p>
+					<pre><code data-trim>
+	php artisan make:job SendNewsEmail --queued
+					</code></pre>
+					<p>這個 class 會實做 ShouldQueue 這個 interface，他會告訴 laravel 這個 job 是要放進 queue 裡面，而不是要立刻執行</p>
+				</section>
+				<section>
+					<p>app\Jobs\SendNewsEmail.php</p>
+					<pre><code class="php" data-trim>
+namespace App\Jobs;
+
+use App\Jobs\Job;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+use App\News;
+// use Illuminate\Contracts\Mail\Mailer;
+use Carbon\Carbon;
+
+class SendNewsEmail extends Job implements SelfHandling, ShouldQueue
+{
+    use InteractsWithQueue, SerializesModels;
+
+    protected $news;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct(News $news)
+    {
+        $this->news = $news;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        $str = "我是假裝在寄信的 jobs " . $this->news->title . " " . Carbon::now();
+        $file = fopen("test.txt", "a+");
+        fwrite($file,$str);
+        fclose($file);
+    }
+}
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>把 job 丟進 queue 裡</h2>
+					<pre><code class="php" data-trim>
+$this->dispatch(new SendNewsEmail($news));
+					</code></pre>
+				</section>
+				<section>
+					<h2>分類 queue</h2>
+					<pre><code class="php" data-trim>
+$job = (new SendNewsEmail($news))->onQueue('emails');
+$this->dispatch($job);
+					</code></pre>
+				</section>
+				<section>
+					<h2>延遲 queue</h2>
+					<pre><code class="php" data-trim>
+$job = (new SendNewsEmail($news))delay(60);
+$this->dispatch($job);
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>有沒有遇到什麼問題呢？</h2>
+					<p>jobs 只是被寫入資料庫，但無論如何都不會執行，只有 push 沒有 pop</p>
+					<pre><code data-trim>
+php artisan queue:work
+					</code></pre>
+					<pre><code data-trim>
+php artisan queue:work --queue=emails
+					</code></pre>
+				</section>
+				<section>
+					<h2>執行 Queue Listener</h2>
+					<pre><code data-trim>
+php artisan queue:listen
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<h2>執行失敗怎麼辦？</h2>
+			</section>
+			<section>
+				<h2>參考資料</h2>
+				<ul>
+					<li>
+						<a href="http://laravel.com/docs/5.1/queues" target="_blank">Laravel 教學：Queues</a>
+					</li>
+					<li>
+						<a href="http://laravelcoding.com/blog/laravel-5-beauty-sending-mail-and-using-queues#14-about-queues">
+							Laravel 5.1 Beauty - Sending Mail and Using Queues
+						</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../reveal/lib/js/head.min.js"></script>
+	<script type="text/javascript" src="../reveal/js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '../reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '../reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '../reveal/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../reveal/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
