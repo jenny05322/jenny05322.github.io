@@ -53,7 +53,7 @@
 						app/Providers/EventServiceProvider.php
 						<pre><code class="php" data-trim>
 'App\Events\NewsAddComplate' => [
-	'App\Listeners\SayHollo',
+	'App\Listeners\SayHello',
 ],
 						</code></pre>
 					</p>
@@ -74,7 +74,7 @@ php artisan event:generate
 public function handle(NewsAddComplate $event)
 {
     // 事件邏輯程式都放這裡
-    echo 'Hollo World';
+    echo 'Hello World';
 
     // 如果你什麼都不想做
     // return false;
@@ -96,7 +96,7 @@ public function boot(DispatcherContract $events)
     parent::boot($events);
 
     $events->listen('manually_event', function ($arguments) {
-        echo 'Hollo World';
+        echo 'Hello World';
     });
 }
 					</code></pre>
@@ -187,13 +187,13 @@ public function handle(NewsAddComplate $event)
 					<h2>如何使用</h2>
 					<pre><code class="php" data-trim>
 'auth.login' => [
-    'App\Listeners\SayHollo',
+    'App\Listeners\SayHello',
 ],
 					</code></pre>
 					<pre><code class="php" data-trim>
  public function handle()
 {
-    echo 'Hollo World';
+    echo 'Hello World';
     exit;	// 記得要有，要不然看不到
 }
 					</code></pre>
