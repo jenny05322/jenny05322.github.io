@@ -70,7 +70,12 @@ body {
   border-radius: 50%;
   padding: 30px;
   position: relative;
-  height: 215.5px;
+  height: 262.5px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #skill .skill-img {
+    height: 212.5px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #skill .skill-img {
