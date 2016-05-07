@@ -1,5 +1,8 @@
 Thumbs.db
 .DS_Store
 ._*
-/resume/style/*
+
 debug.log
+
+/resume/style/*
+/special-efficacy/atom/style/*
