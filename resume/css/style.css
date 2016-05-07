@@ -10097,6 +10097,13 @@ body {
   font-weight: bold;
   margin-bottom: 20px;
 }
+.section.section-green {
+  background: #A2CCB4;
+  color: #fff;
+}
+.section.section-green .title {
+  color: #fff;
+}
 
 #photo .container {
   background-image: url("https://scontent.xx.fbcdn.net/hphotos-xap1/t31.0-8/c0.213.851.315/p851x315/904078_3384582629495_5227209_o.jpg");
@@ -10218,13 +10225,6 @@ body {
   margin: 10px 0;
 }
 
-#skill {
-  background: #A2CCB4;
-  color: #fff;
-}
-#skill .title {
-  color: #fff;
-}
 #skill .skill-img {
   border: solid 2px #fff;
   border-radius: 50%;
@@ -10264,23 +10264,39 @@ body {
   border-radius: 50%;
 }
 
-#portfolio .block {
+#portfolio .block, #practice .block {
   border-radius: 5px;
   padding: 15px;
   transition: all 1s ease;
 }
-#portfolio .block img {
+#portfolio .block img, #practice .block img {
   box-shadow: 1px 1px 3px #999;
 }
+#portfolio .block a, #practice .block a {
+  transition: all 1s ease;
+}
+
 #portfolio .block a {
   color: #A2CCB4;
-  transition: all 1s ease;
 }
 #portfolio .block:hover {
   background: #A2CCB4;
 }
 #portfolio .block:hover a {
   color: #fff;
+}
+
+#practice .block {
+  color: #807d7c;
+}
+#practice .block a {
+  color: #fff;
+}
+#practice .block:hover {
+  background: #fff;
+}
+#practice .block:hover a {
+  color: #A2CCB4;
 }
 
 footer {
