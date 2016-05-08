@@ -1,0 +1,113 @@
+.container {
+  background: #72C1EA;
+  border: solid 5px #563333;
+  box-shadow: 2px 2px 5px #000;
+  height: 500px;
+  width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+}
+.container .sun {
+  background: #FFFFF6;
+  border-radius: 100%;
+  box-shadow: 0px 0px 25px #FFF38B, 0px 0px 50px #fff;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  left: -30px;
+  top: -30px;
+}
+.container .beach {
+  background: #EDAE6B;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+.container .beach .boat {
+  animation-name: boat;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  height: 40px;
+  width: 50px;
+  position: absolute;
+  left: -50px;
+  top: -35px;
+  z-index: 1;
+}
+.container .beach .boat .boat-flag {
+  border-bottom: 5px solid transparent;
+  border-right: 15px solid #FFC107;
+  border-top: 5px solid transparent;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 10px;
+}
+.container .beach .boat .boat-mast {
+  background: #6B4343;
+  height: 25px;
+  width: 5px;
+  position: absolute;
+  left: 25px;
+}
+.container .beach .boat .boat-body {
+  border-top: 15px solid #ECECEC;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  height: 0;
+  width: 30px;
+  position: absolute;
+  bottom: 0;
+}
+.container .beach .sea {
+  background: -webkit-linear-gradient(85deg, rgba(255, 255, 255, 0) 0%, rgba(203, 235, 255, 0.62) 44%, #003576 100%);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container .beach .sea .wave {
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 45%;
+  height: 1600px;
+  width: 1600px;
+  position: absolute;
+  bottom: 65px;
+  left: -340px;
+}
+.container .beach .sea .wave.white {
+  animation-name: wave;
+  animation-duration: 5s;
+  background: rgba(255, 255, 255, 0.3);
+}
+.container .beach .sea .wave.blue {
+  animation-name: wave;
+  animation-duration: 6s;
+  background: rgba(17, 142, 179, 0.3);
+}
+.container .beach .sea .wave.green {
+  animation-name: wave;
+  animation-duration: 7s;
+  background: rgba(12, 119, 109, 0.3);
+}
+
+@keyframes boat {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 850px;
+  }
+}
+@keyframes wave {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
