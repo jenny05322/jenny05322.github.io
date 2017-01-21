@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resume/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -33,7 +31,7 @@
     <div class="section" id="photo">
         <div class="container">
             <div class="pull-right photo-img">
-                <img class="img-responsive img-circle" src="http://graph.facebook.com/4670005644267/picture?width=160&height=160">
+                <img class="img-responsive img-circle" src="resume/image/auout/picture.jpg">
             </div>
             <div class="pull-right text-right text">
                 <h1>Jenny</h1>
@@ -89,59 +87,112 @@
             </div>
         </div>
     </div>
-    <div class="section section-green" id="skill">
+    <!-- <div class="section section-green" id="skill">
         <div class="container">
             <h1 class="text-center title">SKILLS</h1>
+            <h2>前端</h2>
             <div class="row">
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/jQuery.png">
                     </div>
                     <h3 class="text-center">jQuery</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/bootstrap.png">
                     </div>
                     <h3 class="text-center">Bootstrap</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <div class="skill-img">
+                        <img class="img-responsive" src="resume/image/skill/responsive.png">
+                    </div>
+                    <h3 class="text-center">RWD</h3>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/html5.png">
                     </div>
                     <h3 class="text-center">HTML5</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/css3.png">
                     </div>
                     <h3 class="text-center">CSS3</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+            </div>
+            <h2>後端</h2>
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/php.png">
                     </div>
                     <h3 class="text-center">PHP</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/laravel.png">
                     </div>
                     <h3 class="text-center">Laravel</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+            </div>
+            <h2>版本控制</h2>
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/git.png">
                     </div>
                     <h3 class="text-center">Git</h3>
                 </div>
-                <div class="col-xs-6 col-sm-3">
+                <div class="col-xs-6 col-sm-3 col-md-2">
                     <div class="skill-img">
                         <img class="img-responsive" src="resume/image/skill/github.png">
                     </div>
                     <h3 class="text-center">GitHub</h3>
                 </div>
             </div>
+        </div>
+    </div> -->
+    <div class="section section-green" id="skill">
+        <div class="container">
+            <h1 class="text-center title">SKILLS</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <h2>前端</h2>
+                    <ul>
+                        <li>jQuery</li>
+                        <li>Bootstrap</li>
+                        <li>RWD</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>後端</h2>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Laravel</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>資料庫</h2>
+                    <ul>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h2>版本控制</h2>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Bitbucket</li>
+                        <li>SourceTree</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="section" id="portfolio">
@@ -150,31 +201,70 @@
             <div class="row">
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/ninishop.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>購物車系統</li>
+                            <li>金流串接</li>
+                            <li>響應式網頁</li>
+                        </ul>
+                    </div>
                     <h3>Ninishop</h3>
                     <a href="http://ninishop.com.tw/" target="_blank">http://ninishop.com.tw/</a>
                 </div>
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/temptation.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>購物車系統</li>
+                            <li>金流串接</li>
+                        </ul>
+                    </div>
                     <h3>Temptation</h3>
                     <a href="http://www.temptationstyles.com/" target="_blank">http://www.temptationstyles.com/</a>
                 </div>
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/dazzling.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>購物車系統</li>
+                            <li>金流串接</li>
+                        </ul>
+                    </div>
                     <h3>Dazzling Dazzlin</h3>
                     <a href="https://dazzlingdazzlin.com.tw/" target="_blank">https://dazzlingdazzlin.com.tw/</a>
                 </div>
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/rule.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>Facebook 登入</li>
+                            <li>Google 登入</li>
+                            <li>與手機 APP 資料串接</li>
+                        </ul>
+                    </div>
                     <h3>都市更新法規</h3>
                     <a href="http://uract.cpami.gov.tw/" target="_blank">http://uract.cpami.gov.tw/</a>
                 </div>
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/ttsh.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>電子報發送</li>
+                            <li>Google 行事曆串接</li>
+                            <li>無障礙網頁</li>
+                        </ul>
+                    </div>
                     <h3>台北市立大同高級中學</h3>
                     <a href="http://www.ttsh.tp.edu.tw/" target="_blank">http://www.ttsh.tp.edu.tw/</a>
                 </div>
                 <div class="col-sm-6 col-md-4 block">
                     <img class="img-responsive" src="resume/image/portfolio/rich-huang.jpg">
+                    <div class="hover-content">
+                        <ul>
+                            <li>相簿</li>
+                            <li>影音管理</li>
+                        </ul>
+                    </div>
                     <h3>台灣鼓王</h3>
                     <a href="http://richhuang.org/" target="_blank">http://richhuang.org/</a>
                 </div>
@@ -203,6 +293,8 @@
             Copyright © 2016 Jenny
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $('.navbar a').click(function (e) {
             var target = $(this).attr('href');
