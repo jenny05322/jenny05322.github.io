@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draw</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/draw.css">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" class="clear"><i class="fas fa-brush"></i> 清除</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#" class="undo"><i class="fas fa-undo"></i> 復原</a>
+                    </li> -->
+                    <li>
+                        <a href="#" class="save"><i class="fas fa-save"></i> 儲存</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">顏色 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="color" data-color="#000000"><i class="fas fa-circle" style="color: #000000;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#7f7f7f"><i class="fas fa-circle" style="color: #7f7f7f;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#880015"><i class="fas fa-circle" style="color: #880015;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#ed1c24"><i class="fas fa-circle" style="color: #ed1c24;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#ff7f27"><i class="fas fa-circle" style="color: #ff7f27;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#fff200"><i class="fas fa-circle" style="color: #fff200;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#22b14c"><i class="fas fa-circle" style="color: #22b14c;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#00a2e8"><i class="fas fa-circle" style="color: #00a2e8;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#3f48cc"><i class="fas fa-circle" style="color: #3f48cc;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#a349a4"><i class="fas fa-circle" style="color: #a349a4;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#ffffff"><i class="far fa-circle"></i></a></li>
+                            <li><a href="#" class="color" data-color="#c3c3c3"><i class="fas fa-circle" style="color: #c3c3c3;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#b97a57"><i class="fas fa-circle" style="color: #b97a57;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#ffaec9"><i class="fas fa-circle" style="color: #ffaec9;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#ffc90e"><i class="fas fa-circle" style="color: #ffc90e;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#efe4b0"><i class="fas fa-circle" style="color: #efe4b0;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#b5e61d"><i class="fas fa-circle" style="color: #b5e61d;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#99d9ea"><i class="fas fa-circle" style="color: #99d9ea;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#7092be"><i class="fas fa-circle" style="color: #7092be;"></i></a></li>
+                            <li><a href="#" class="color" data-color="#c8bfe7"><i class="fas fa-circle" style="color: #c8bfe7;"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">大小 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="size" data-size="small">小</a></li>
+                            <li><a href="#" class="size active" data-size="normal">一般</a></li>
+                            <li><a href="#" class="size" data-size="large">大</a></li>
+                            <li><a href="#" class="size" data-size="huge">特大</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#" class="tool" data-tool="marker"><i class="fas fa-pen"></i> 色筆</a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="#" class="tool" data-tool="eraser"><i class="fas fa-eraser"></i> 橡皮擦</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row margin-bottom">
+            <div class="col-xs-6">
+                <div id="current-pen">
+                    目前畫筆樣式：
+                    <div id="current-pen-style"></div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                目前儲存圖片：
+                <div id="output-image"></div>
+            </div>
+        </div>
+        <div id="canvas-div"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="js/draw.js"></script>
+</body>
+</html>
