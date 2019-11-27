@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>計時器</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            background: rgba(239, 239, 239, 0.5);
+            color: #807d7c;
+            font-family: Helvetica Neue,Helvetica,Arial,Microsoft JhengHei,PingFang TC,LiHei Pro,WenQuanYi Zen Hei,sans-serif;
+        }
+
+        #countdownTime {
+            font-size: 100px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div id="countdownTime">00:00</div>
+        <button type="button" id="start" class="btn btn-lg btn-primary">開始</button>
+        <button type="button" id="end" class="btn btn-lg btn-danger hide">停</button>
+        <button type="button" id="restart" class="btn btn-lg btn-info">重來</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var nowTime = 0;
+            var interval;
+            $('#start').click(function () {
+                $('#start').addClass('hide');
+                $('#end').removeClass('hide');
+
+                clearInterval(interval);
+                interval = setInterval(countdownfunc, 10);
+            });
+            $('#end').click(function () {
+                clearInterval(interval);
+                $('#start').removeClass('hide');
+                $('#end').addClass('hide');
+            });
+            $('#restart').click(function () {
+                clearInterval(interval);
+                nowTime = 0
+                $('#countdownTime').html('00:00');
+                $('#start').removeClass('hide');
+                $('#end').addClass('hide');
+            });
+            function countdownfunc () {
+                nowTime = nowTime + 1;
+
+                var nowA = Math.floor(nowTime / 100);
+                var nowB = (nowTime - (100 * nowA));
+
+                $('#countdownTime').html(('0' + nowA).slice(-2) + ':' + ('0' + nowB).slice(-2));
+            }
+        });
+    </script>
+</body>
+</html>
