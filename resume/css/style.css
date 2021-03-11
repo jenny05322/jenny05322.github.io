@@ -10285,14 +10285,15 @@ body {
   color: #A2CCB4;
 }
 #portfolio .block .hover-content {
-  background: rgba(255, 255, 255, 0.85);
-  opacity: 0;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  left: 15px;
   line-height: 35px;
+  opacity: 0;
   padding: 15px;
   position: absolute;
-  top: 15px;
-  left: 15px;
   right: 15px;
+  top: 15px;
   transition: all 1s ease;
 }
 #portfolio .block.offline {
