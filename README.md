@@ -27,6 +27,7 @@
 * Bootstrap
 * RWD
 * Vue
+* SCSS
 ### 後端
 * PHP
 * Laravel
@@ -41,11 +42,5 @@
 * 公益生涯探索網 <https://aicareer.org.tw>
 * 英語智慧城市共創平台 <https://bslcity.com.tw>
 * 花蓮 AI 測評網 <https://aiexam.com.tw>
-* 台北市立大同高級中學 <http://www.ttsh.tp.edu.tw>
 * 高苑科技大學歷程管理系統 <http://www.ep.kyu.edu.tw>
 * 遠距競賽成績即時感測及同步可視系統 <https://powertech.steamcode.com.tw>
-* Ninishop <http://ninishop.com.tw>
-* 都市更新法規 <http://uract.cpami.gov.tw>
-* 樂學網 2017 聖誕節活動頁 <https://347.com.tw/event/2017christmas>
-* 樂學網 2019 聖誕節活動頁 <https://347.com.tw/event/Xmas_NewYear>
-* 樂學網 2018 過年活動頁 <https://347.com.tw/event/2017christmas>

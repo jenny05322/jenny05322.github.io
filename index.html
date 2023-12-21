@@ -4,12 +4,12 @@
     <title>Jenny's Resume</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resume/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark navbar-expand-sm fixed-top p-0">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top p-0 shadow-sm">
         <div class="container">
             <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -17,19 +17,19 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link p-3" href="#photo"><i class="fa-solid fa-house"></i></a>
+                        <a class="nav-link text-white p-3" href="#photo"><i class="fa-solid fa-house"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-3" href="#about-me">ABOUT ME</a>
+                        <a class="nav-link text-white p-3" href="#about-me">ABOUT ME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-3" href="#skill">SKILLS</a>
+                        <a class="nav-link text-white p-3" href="#skill">SKILLS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-3" href="#portfolio">PORTFOLIO</a>
+                        <a class="nav-link text-white p-3" href="#portfolio">PORTFOLIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-3" href="#practice">PRACTICE</a>
+                        <a class="nav-link text-white p-3" href="#practice">PRACTICE</a>
                     </li>
                 </ul>
             </div>
@@ -38,23 +38,20 @@
     <div class="py-5 section" id="photo">
         <div class="container p-3 clearfix">
             <div class="float-end ps-3 photo-img">
-                <img class="img-fluid rounded-circle" src="resume/image/auout/picture.jpg">
+                <img class="img-fluid rounded-circle border border-4 border-white" src="resume/image/auout/picture.jpg">
             </div>
-            <div class="float-end text">
+            <div class="float-end text-white text">
                 <h1>Jenny</h1>
                 <p>
                     <em>Web Developer</em><br>
                 </p>
             </div>
-            <div class="contact float-start">
-                <a class="mx-1" href="mailto:jenny05322@yahoo.com.tw" target="_blank">
-                    <div class="envelope"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact float-start d-flex">
+                <a class="d-flex justify-content-center align-items-center rounded-circle border border-2 border-white text-white text-decoration-none fs-4 mx-1" href="mailto:jenny05322@yahoo.com.tw" target="_blank">
+                    <i class="fa-solid fa-envelope"></i>
                 </a>
-                <a class="mx-1" href="https://www.facebook.com/jenny05322" target="_blank">
-                    <div class="facebook"><i class="fa-brands fa-facebook-f"></i></div>
-                </a>
-                <a class="mx-1" href="https://github.com/jenny05322" target="_blank">
-                    <div class="github"><i class="fa-brands fa-github-alt"></i></div>
+                <a class="d-flex justify-content-center align-items-center rounded-circle border border-2 border-white text-white text-decoration-none fs-4 mx-1" href="https://github.com/jenny05322" target="_blank">
+                    <i class="fa-brands fa-github-alt"></i>
                 </a>
             </div>
         </div>
@@ -63,7 +60,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
-                    <div class="description">
+                    <div class="fs-5">
                         <p class="mb-4">
                             哈囉~大家好，我是 Jenny。
                         </p>
@@ -76,28 +73,28 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="experience">
+                    <div class="experience float-end">
                         <h2 class="mb-4">EDUCATION & JOBS</h2>
                         <div class="timeline">
                             <div class="timeline-event">
                                 <em class="event-date">2020 / 09 ~ NOW</em>
-                                <h3 class="event-name">成就數位股份有限公司</h3>
-                                <p class="event-description">研發部經理</p>
+                                <h3 class="my-2">成就數位股份有限公司</h3>
+                                <p>研發部經理</p>
                             </div>
                             <div class="timeline-event">
                                 <em class="event-date">2017 / 04 ~ 2020/09</em>
-                                <h3 class="event-name">樂學網科技股份有限公司</h3>
-                                <p class="event-description">程式設計師</p>
+                                <h3 class="my-2">樂學網科技股份有限公司</h3>
+                                <p>程式設計師</p>
                             </div>
                             <div class="timeline-event">
                                 <em class="event-date">2012 / 10 ~ 2017 / 03</em>
-                                <h3 class="event-name">竹貓星球數位股份有限公司</h3>
-                                <p class="event-description">開發經理</p>
+                                <h3 class="my-2">竹貓星球數位股份有限公司</h3>
+                                <p>開發經理</p>
                             </div>
                             <div class="timeline-event">
                                 <em class="event-date">2007 / 9 ~ 2011 / 6 (畢業)</em>
-                                <h3 class="event-name">國立嘉義大學</h3>
-                                <p class="event-description">資訊管理學系</p>
+                                <h3 class="my-2">國立嘉義大學</h3>
+                                <p>資訊管理學系</p>
                             </div>
                         </div>
                     </div>
@@ -105,9 +102,9 @@
             </div>
         </div>
     </div>
-    <div class="py-5 section section-green" id="skill">
+    <div class="py-5 section section-green text-white" id="skill">
         <div class="container">
-            <h1 class="text-center mb-3 title">SKILLS</h1>
+            <h1 class="text-center mb-3 fw-bold text-white">SKILLS</h1>
             <div class="row">
                 <div class="col-md-3">
                     <h2>前端</h2>
@@ -116,6 +113,7 @@
                         <li>Bootstrap</li>
                         <li>RWD</li>
                         <li>Vue</li>
+                        <li>SCSS</li>
                     </ul>
                 </div>
                 <div class="col-md-3">
@@ -141,16 +139,15 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
     <div class="py-5 section" id="portfolio">
         <div class="container">
-            <h1 class="text-center mb-3 title">PORTFOLIO</h1>
+            <h1 class="text-center mb-3 fw-bold">PORTFOLIO</h1>
             <div class="row">
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block position-relative">
                     <img class="img-fluid" src="resume/image/portfolio/aicareer.jpg">
-                    <div class="p-3 hover-content">
+                    <div class="p-3 position-absolute fs-5 lh-lg hover-content">
                         <ul>
                             <li>學測落點分析</li>
                             <li>分科測驗落點分析</li>
@@ -159,9 +156,9 @@
                     <h3 class="mt-3">公益生涯探索網</h3>
                     <a class="text-decoration-none" href="https://aicareer.org.tw" target="_blank">https://aicareer.org.tw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block position-relative">
                     <img class="img-fluid" src="resume/image/portfolio/bslcity.jpg">
-                    <div class="p-3 hover-content">
+                    <div class="p-3 position-absolute fs-5 lh-lg hover-content">
                         <ul>
                             <li>任務創作</li>
                             <li>題目測驗</li>
@@ -171,9 +168,9 @@
                     <h3 class="mt-3">英語智慧城市共創平台</h3>
                     <a class="text-decoration-none" href="https://bslcity.com.tw" target="_blank">https://bslcity.com.tw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block position-relative">
                     <img class="img-fluid" src="resume/image/portfolio/aiexam.jpg">
-                    <div class="p-3 hover-content">
+                    <div class="p-3 position-absolute fs-5 lh-lg hover-content">
                         <ul>
                             <li>測評系統</li>
                             <li>AI 題目推薦</li>
@@ -183,21 +180,9 @@
                     <h3 class="mt-3">花蓮 AI 測評網</h3>
                     <a class="text-decoration-none" href="https://aiexam.com.tw" target="_blank">https://aiexam.com.tw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/ttsh.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>電子報發送</li>
-                            <li>Google 行事曆串接</li>
-                            <li>無障礙網頁</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">台北市立大同高級中學</h3>
-                    <a class="text-decoration-none" href="http://www.ttsh.tp.edu.tw" target="_blank">http://www.ttsh.tp.edu.tw</a>
-                </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block position-relative">
                     <img class="img-fluid" src="resume/image/portfolio/ep.jpg">
-                    <div class="p-3 hover-content">
+                    <div class="p-3 position-absolute fs-5 lh-lg hover-content">
                         <ul>
                             <li>個人履歷</li>
                             <li>串接學校資料</li>
@@ -207,9 +192,9 @@
                     <h3 class="mt-3">高苑科大歷程管理系統</h3>
                     <a class="text-decoration-none" href="http://www.ep.kyu.edu.tw" target="_blank">http://www.ep.kyu.edu.tw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block position-relative">
                     <img class="img-fluid" src="resume/image/portfolio/powertech.jpg">
-                    <div class="p-3 hover-content">
+                    <div class="p-3 position-absolute fs-5 lh-lg hover-content">
                         <ul>
                             <li>同步手機 APP 即時顯示隊伍分數</li>
                         </ul>
@@ -217,88 +202,34 @@
                     <h3 class="mt-3">遠距競賽成績即時感測及同步可視系統</h3>
                     <a class="text-decoration-none" href="https://powertech.steamcode.com.tw" target="_blank">https://powertech.steamcode.com.tw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/ninishop.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>購物車系統</li>
-                            <li>金流串接</li>
-                            <li>響應式網頁</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">Ninishop</h3>
-                    <a class="text-decoration-none" href="http://ninishop.com.tw" target="_blank">http://ninishop.com.tw</a>
-                </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/rule.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>Facebook 登入</li>
-                            <li>Google 登入</li>
-                            <li>與手機 APP 資料串接</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">都市更新法規</h3>
-                    <a class="text-decoration-none" href="http://uract.cpami.gov.tw" target="_blank">http://uract.cpami.gov.tw</a>
-                </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/3472017christmas.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>爬梯子小遊戲</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">樂學網 2017 聖誕節活動頁</h3>
-                    <a class="text-decoration-none" href="https://347.com.tw/event/2017christmas" target="_blank">https://347.com.tw/event/2017christmas</a>
-                </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/3472019christmas.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>拉霸小遊戲</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">樂學網 2019 聖誕節活動頁</h3>
-                    <a class="text-decoration-none" href="https://347.com.tw/event/Xmas_NewYear" target="_blank">https://347.com.tw/event/Xmas_NewYear</a>
-                </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
-                    <img class="img-fluid" src="resume/image/portfolio/3472018chinese_new_year.jpg">
-                    <div class="p-3 hover-content">
-                        <ul>
-                            <li>抽獎程式</li>
-                        </ul>
-                    </div>
-                    <h3 class="mt-3">樂學網 2018 過年活動頁</h3>
-                    <a class="text-decoration-none" href="https://347.com.tw/event/chinese_new_year/2018" target="_blank">https://347.com.tw/event/chinese_new_year/2018</a>
-                </div>
             </div>
         </div>
     </div>
-    <div class="py-5 section section-green" id="practice">
+    <div class="py-5 section section-green text-white" id="practice">
         <div class="container">
-            <h1 class="text-center mb-3 title">PRACTICE</h1>
+            <h1 class="text-center mb-3 fw-bold text-white">PRACTICE</h1>
             <div class="row">
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block">
                     <img class="img-fluid" src="resume/image/practice/atom.jpg">
                     <h3 class="mt-3">Atom</h3>
                     <a class="text-decoration-none" href="http://jenny05322.github.io/special-efficacy/atom" target="_blank">http://jenny05322.github.io/special-efficacy/atom</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block">
                     <img class="img-fluid" src="resume/image/practice/wave.jpg">
                     <h3 class="mt-3">Wave</h3>
                     <a class="text-decoration-none" href="http://jenny05322.github.io/special-efficacy/wave" target="_blank">http://jenny05322.github.io/special-efficacy/wave</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block">
                     <img class="img-fluid" src="resume/image/practice/ladder.jpg">
                     <h3 class="mt-3">Ladder</h3>
                     <a class="text-decoration-none" href="http://jenny05322.github.io/special-efficacy/ladder" target="_blank">http://jenny05322.github.io/special-efficacy/ladder</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block">
                     <img class="img-fluid" src="resume/image/practice/draw.jpg">
                     <h3 class="mt-3">Draw</h3>
                     <a class="text-decoration-none" href="http://jenny05322.github.io/special-efficacy/draw" target="_blank">http://jenny05322.github.io/special-efficacy/draw</a>
                 </div>
-                <div class="col-md-6 col-lg-4 p-3 block">
+                <div class="col-md-6 col-lg-4 p-3 rounded block">
                     <img class="img-fluid" src="resume/image/practice/timer.jpg">
                     <h3 class="mt-3">Timer</h3>
                     <a class="text-decoration-none" href="http://jenny05322.github.io/special-efficacy/timer" target="_blank">http://jenny05322.github.io/special-efficacy/timer</a>
@@ -306,16 +237,15 @@
             </div>
         </div>
     </div>
-    <a class="fs-1 d-none d-md-block top" href="#photo">
+    <a class="fs-1 d-block position-fixed top" href="#photo">
         <i class="fa-solid fa-circle-chevron-up"></i>
     </a>
-    <footer>
-        <div class="container text-center py-2">
+    <footer class="border-top">
+        <div class="container text-center text-white py-2">
             Copyright © 2023 Jenny
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
         $('.navbar a, .top').click(function (e) {
             var target = $(this).attr('href');
